@@ -9,12 +9,15 @@ led.direction = digitalio.Direction.OUTPUT
 def testFun():
    print("LED should be on!")
 
-time.sleep(2)
-testFun()
+time.sleep(1)
 
-led.value = True
-time.sleep(2)
-led.value = False
+while True:
+   led.value = True
+   testFun()
+   time.sleep(1)
+   led.value = False
+   time.sleep(1)
+
 
 
 
