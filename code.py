@@ -10,6 +10,7 @@ function testFun() {
    print("LED should be on!")
 }
 
+
 time.sleep(2)
 testFun()
 
