@@ -6,10 +6,8 @@ import time
 led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT
 
-function testFun() {
+def testFun():
    print("LED should be on!")
-}
-
 
 time.sleep(2)
 testFun()
