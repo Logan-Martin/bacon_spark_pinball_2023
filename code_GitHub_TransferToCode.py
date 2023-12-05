@@ -38,12 +38,6 @@ while True:
          print("True, left!")
          servo_left.angle = 90
 
-      if debounce_ButtonRight == False:
-         debounce_ButtonRight = True
-         print("True, right!")
-         servo_right.angle = 90   
-
-
    else:
 
       if debounce_ButtonLeft == True:
@@ -51,10 +45,22 @@ while True:
          print("False, left!")
          servo_left.angle = 0
 
+
+
+   if button_right.value == True:
+
+      if debounce_ButtonRight == False:
+         debounce_ButtonRight = True
+         print("True, right!")
+         servo_right.angle = 90
+
+   else:
+
       if debounce_ButtonRight == True:
          debounce_ButtonRight = False
          print("False, right!")
-         servo_right.angle = 0   
-  
+         servo_right.angle = 0
 
+
+      
 
