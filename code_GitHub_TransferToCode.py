@@ -6,11 +6,21 @@ import time
 import pwmio
 from adafruit_motor import servo
 
-led = digitalio.DigitalInOut(board.LED)
-led.direction = digitalio.Direction.OUTPUT\
+button_left = digitalio.DigitalInOut(board.GP4)
+button_left.direction = digitalio.Direction.OUTPUT
+debounce_ButtonLeft = False
 
-pwm_servo = pwmio.PWMOut(board.GP0, duty_cycle=2 ** 15, frequency=50)
-servo1 = servo.Servo(pwm_servo, min_pulse=500, max_pulse=2500)
+button_right = digitalio.DigitalInOut(board.GP15)
+button_right.direction = digitalio.Direction.OUTPUT
+debounce_ButtonRight = False
+
+pwm_servo_left = pwmio.PWMOut(board.GP0, duty_cycle=2 ** 15, frequency=50)
+servo_left = servo.Servo(pwm_servo_left, min_pulse=500, max_pulse=2500)
+
+pwm_servo_right = pwmio.PWMOut(board.GP12, duty_cycle=2 ** 15, frequency=50)
+servo_right = servo.Servo(pwm_servo_right, min_pulse=500, max_pulse=2500)
+
+
 
 def testFun():
    print("LED should be on!")
@@ -20,13 +30,31 @@ def testFun():
 time.sleep(1)
 
 while True:
-   led.value = True
-   testFun()
-   time.sleep(1)
-   led.value = False
-   servo1.angle = 90
-   time.sleep(1)
+
+   if button_left.value == True:
+
+      if debounce_ButtonLeft == False:
+         debounce_ButtonLeft = True
+         print("True, left!")
+         servo_left.angle = 90
+
+      if debounce_ButtonRight == False:
+         debounce_ButtonRight = True
+         print("True, right!")
+         servo_right.angle = 90   
 
 
+   else:
+
+      if debounce_ButtonLeft == True:
+         debounce_ButtonLeft = False
+         print("False, left!")
+         servo_left.angle = 0
+
+      if debounce_ButtonRight == True:
+         debounce_ButtonRight = False
+         print("False, right!")
+         servo_right.angle = 0   
+  
 
 
