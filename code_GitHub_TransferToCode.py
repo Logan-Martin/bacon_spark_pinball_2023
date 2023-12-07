@@ -17,7 +17,7 @@ debounce_ButtonRight = False
 pwm_servo_left = pwmio.PWMOut(board.GP11, duty_cycle=2 ** 15, frequency=50)
 servo_left = servo.Servo(pwm_servo_left, min_pulse=500, max_pulse=2500)
 
-pwm_servo_right = pwmio.PWMOut(board.GP12, duty_cycle=2 ** 15, frequency=50)
+pwm_servo_right = pwmio.PWMOut(board.GP7, duty_cycle=2 ** 15, frequency=50)
 servo_right = servo.Servo(pwm_servo_right, min_pulse=500, max_pulse=2500)
 
 
