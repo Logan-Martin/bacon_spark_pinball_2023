@@ -11,9 +11,9 @@ Timing for project: Finish before June, about 7 months. Meeting once a week on T
 Essential:
 - Flippers
 - Plunger
-- Playfield w/ obstacles
 
 Non-essential:
+- Playfield w/ obstacles
 - LCD that keeps track of things (score)
 - Bumpers & Targets
 - Theme and Artwork
