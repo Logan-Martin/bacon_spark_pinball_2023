@@ -6,18 +6,18 @@ import time
 import pwmio
 from adafruit_motor import servo
 
-button_left = digitalio.DigitalInOut(board.GP4)
+button_left = digitalio.DigitalInOut(board.GP13)
 button_left.direction = digitalio.Direction.OUTPUT
 debounce_ButtonLeft = False
 
-button_right = digitalio.DigitalInOut(board.GP15)
+button_right = digitalio.DigitalInOut(board.GP16)
 button_right.direction = digitalio.Direction.OUTPUT
 debounce_ButtonRight = False
 
-pwm_servo_left = pwmio.PWMOut(board.GP11, duty_cycle=2 ** 15, frequency=50)
+pwm_servo_left = pwmio.PWMOut(board.GP0, duty_cycle=2 ** 15, frequency=50)
 servo_left = servo.Servo(pwm_servo_left, min_pulse=500, max_pulse=2500)
 
-pwm_servo_right = pwmio.PWMOut(board.GP7, duty_cycle=2 ** 15, frequency=50)
+pwm_servo_right = pwmio.PWMOut(board.GP3, duty_cycle=2 ** 15, frequency=50)
 servo_right = servo.Servo(pwm_servo_right, min_pulse=500, max_pulse=2500)
 
 
@@ -57,4 +57,3 @@ while True:
 
 
       
-
