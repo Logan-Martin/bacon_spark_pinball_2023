@@ -3,6 +3,8 @@ A github repo for a pinball machine for BACON 2023-2024.
 
 ---
 
+![IMG_20240516_165120905](https://github.com/Logan-Martin/bacon_spark_pinball_2023/assets/71342159/4bd9282a-9729-49b9-85da-7ee02eb7c2b5)
+
 
 ### Planning
 
